@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	
-	public float moveSpeed; 
-	public float jumpForce; 
+	public float moveSpeed = 5f; 
+	public float jumpForce = 500f; 
 
 	public Transform groundCheck;
 	public LayerMask Ground; 
@@ -30,9 +30,6 @@ public class PlayerController : MonoBehaviour {
 		_animator = GetComponent<Animator>();
 		_rigidbody = GetComponent<Rigidbody2D>();
 		_audio = GetComponent<AudioSource>();
-
-		moveSpeed = 5f;   
-		jumpForce = 50f; 
 	}
 
 	void Update () {

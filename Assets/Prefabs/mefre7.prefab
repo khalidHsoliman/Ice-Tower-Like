@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1974542072705178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4568328220954494}
   m_Father: {fileID: 0}
@@ -94,7 +94,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &58905971244493000
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -107,7 +107,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.39334834}
+  m_Offset: {x: 0, y: -0.385}
   serializedVersion: 2
   m_Radius: 0.08665165
 --- !u!70 &70618337447890552
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 50
+  jumpForce: 400
   groundCheck: {fileID: 4568328220954494}
   Ground:
     serializedVersion: 2
