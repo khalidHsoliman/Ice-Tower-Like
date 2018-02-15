@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void doJump()
+
 	{
 		_velocityY = 0f;
 		_rigidbody.AddForce(new Vector2(0, jumpForce));  
