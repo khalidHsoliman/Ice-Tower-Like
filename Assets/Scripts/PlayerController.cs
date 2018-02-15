@@ -68,12 +68,37 @@ public class PlayerController : MonoBehaviour {
 			_canDoubleJump = false; 
 		}
 
+		if(Input.GetButtonUp("Jump") && _velocityY > 0f)
+		{
+			_velocityY = 0f; 
+		}
+
 		_rigidbody.velocity = new Vector2(_velocityX * moveSpeed, _velocityY);
 
 	}
 
+	void LateUpdate()
+	{
+		Vector3 localScale = _transform.localScale; 
+		if(_velocityX > 0)
+		{
+			_facingRight = true; 
+		}else if(_velocityX < 0)
+		{
+			_facingRight = false; 
+		}
+
+		if(((_facingRight) && (localScale.x < 0) || (!_facingRight) && (localScale.x > 0)))
+		{
+			localScale.x *= -1; 
+		}
+
+		_transform.localScale = localScale; 
+	}
+
 	void doJump()
 	{
-
+		_velocityY = 0f;
+		_rigidbody.AddForce(new Vector2(0, jumpForce));  
 	}
 }

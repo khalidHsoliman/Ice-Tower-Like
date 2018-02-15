@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4627572301538988}
   - component: {fileID: 212482169613921166}
   - component: {fileID: 61115584829092584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dirt_GrassOneSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}

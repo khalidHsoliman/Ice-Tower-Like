@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4569248497363420}
   - component: {fileID: 212158152548927932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dirt_GrassTwoSides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4250720483077258}
   - component: {fileID: 212123711992869308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dirt_GrassOneSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4430593366757166}
   - component: {fileID: 212202329560599542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dirt_GrassOneSide (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4966877494279592}
   - component: {fileID: 212524292987619842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dirt_GrassTwoSides (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4998589147490184}
   - component: {fileID: 212134695911057108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dirt_GrassOneSide (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4495319308006650}
   - component: {fileID: 61211182863000832}
   - component: {fileID: 251250490207209252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dirt Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
