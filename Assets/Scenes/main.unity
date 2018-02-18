@@ -589,7 +589,7 @@ MonoBehaviour:
   - {fileID: 1778736693008002, guid: 7a1363feef561fa40be2a5fa2055075d, type: 2}
   winPlatform: {fileID: 1896125860898770, guid: 7abb6de1800838249a04075a006d79e3,
     type: 2}
-  numOfPlatforms: 5
+  numOfPlatforms: 30
   levelWidth: 5
   minY: 1.5
   maxY: 4

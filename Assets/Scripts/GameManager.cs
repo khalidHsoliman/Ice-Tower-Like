@@ -36,6 +36,9 @@ public class GameManager : Singleton<GameManager> {
 		if(gameOverDisplay)
 			gameOverDisplay.gameObject.SetActive(false); 
 
+		if(victoryDisplay)
+			victoryDisplay.gameObject.SetActive(false);
+
 		if(playAgain)
 			playAgain.SetActive(false); 
 
@@ -91,6 +94,9 @@ public class GameManager : Singleton<GameManager> {
 
 		if(playAgain)
 			playAgain.SetActive(false); 
+
+		if(victoryDisplay)
+			victoryDisplay.gameObject.SetActive(false);
 
 		_player.GetComponent<PlayerController>().Respawn(_spawnPos, _cameraPos); 
 	}
