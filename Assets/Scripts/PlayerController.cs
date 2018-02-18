@@ -7,8 +7,16 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5f; 
 	public float jumpForce = 500f; 
 
+	public bool playerCanMove = true; 
+
 	public Transform groundCheck;
 	public LayerMask Ground; 
+
+	public AudioClip playerJump; 
+	public AudioClip playerDeath; 
+	public AudioClip playerVictory; 
+
+	public GameObject starsEffect; 
 	
 	float _velocityX; 
 	float _velocityY; 
@@ -16,7 +24,6 @@ public class PlayerController : MonoBehaviour {
 	bool _facingRight = true; 
 	bool isGrounded = false; 
 	bool isRunning = false;
-	bool isJumping = false; 
 	bool _canDoubleJump = false; 
 
 	Transform _transform; 
@@ -34,6 +41,9 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 
+		if(!playerCanMove)	
+			return;
+
 		_velocityX = Input.GetAxisRaw("Horizontal"); 
 
 		if(_velocityX != 0)
@@ -50,7 +60,6 @@ public class PlayerController : MonoBehaviour {
 		if(isGrounded)
 		{
 			_canDoubleJump = true; 
-			isJumping = false; 
 		}
 
 		_animator.SetBool("isGrounded", isGrounded); 
@@ -60,10 +69,11 @@ public class PlayerController : MonoBehaviour {
 			doJump(); 
 		}else if(_canDoubleJump && Input.GetButtonDown("Jump"))
 		{
-			isJumping = true; 
 			doJump();
+			Instantiate(starsEffect,transform.position,transform.rotation);
 			_canDoubleJump = false; 
 		}
+
 
 		if(Input.GetButtonUp("Jump") && _velocityY > 0f)
 		{
@@ -98,5 +108,51 @@ public class PlayerController : MonoBehaviour {
 	{
 		_velocityY = 0f;
 		_rigidbody.AddForce(new Vector2(0, jumpForce));  
+
+		_audio.PlayOneShot(playerJump); 
 	}
+
+	public void FreezePlayer()
+	{
+		playerCanMove = false; 
+		_rigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+	}
+
+	public void UnfreezePlayer()
+	{
+		playerCanMove = true; 
+		_rigidbody.constraints = RigidbodyConstraints2D.None; 
+		_rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation; 
+
+	}
+
+	public void KillPlayer()
+	{
+		playerCanMove = false; 
+
+		_audio.PlayOneShot(playerDeath); 
+		
+		if(GameManager.Instance)
+			GameManager.Instance.EndGame(); 
+	}
+
+	public void Respawn(Vector3 respawnPos, Vector3 cameraPos)
+	{
+		UnfreezePlayer();
+
+		transform.position = respawnPos; 
+		Camera.main.transform.position = cameraPos;
+	}
+
+	public void Victory()
+	{
+		FreezePlayer(); 
+		
+		_animator.SetTrigger("Victory"); 
+		_audio.PlayOneShot(playerVictory); 
+
+		if(GameManager.Instance)
+			GameManager.Instance.Win(); 
+	}
+
 }
